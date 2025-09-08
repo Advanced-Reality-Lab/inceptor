@@ -1,0 +1,50 @@
+{
+  "clipTypes": {
+    "LinearClip": {
+      "fields": [
+        { "name": "nextClip", "label": "Next Clip Index", "type": "number" }
+      ]
+    },
+    "ChoiceClip": {
+      "fields": [
+        { "name": "choices", "label": "Choices", "type": "choices" }
+      ]
+    },
+    "QuizClip": {
+      "fields": [
+        { "name": "choices", "label": "Choices", "type": "choices" },
+        { "name": "correctAnswerIndex", "label": "Correct Answer Index", "type": "number" },
+        { 
+          "name": "feedback", 
+          "label": "Feedback", 
+          "type": "string[]",
+          "editorVisible": false 
+        }
+      ]
+    }
+  },
+  "moods": [
+    "Neutral",
+    "Happy",
+    "Sad",
+    "Angry",
+    "Excited",
+    "Confused"
+  ],
+  "bodyBehaviors": [
+    "Idle",
+    "Wave",
+    "Explain",
+    "Listen",
+    "Think"
+  ],
+  "reactions": [
+    "None",
+    "Nod",
+    "ShakeHead",
+    "Gasp",
+    "Wink"
+  ],
+  "aiServiceUrl": "https://your-cloud-function-url.com/suggest-animations"
+
+}

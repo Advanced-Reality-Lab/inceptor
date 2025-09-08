@@ -1,0 +1,41 @@
+# This file defines the automated process for deploying your documentation.
+name: Deploy Documentation to GitHub Pages
+
+# This workflow will run automatically every time you push code to your 'main' branch.
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checks out your repository's code so the workflow can access it.
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. Sets up the correct version of Node.js for Docusaurus to use.
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: 'packages/docs/package-lock.json'
+
+      # 3. Installs Docusaurus dependencies and builds the static website.
+      #    The 'working-directory' is crucial for a monorepo.
+      - name: Install and Build
+        working-directory: ./packages/docs
+        run: |
+          npm install
+          npm run build
+
+      # 4. Deploys the final website files to a special 'gh-pages' branch.
+      #    GitHub Pages will then serve your site from this branch.
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # This must point to the 'build' folder inside your Docusaurus project.
+          publish_dir: ./packages/docs/build

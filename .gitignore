@@ -1,0 +1,84 @@
+# =================================================================
+# Unity Project
+# =================================================================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can get excessive
+/[Mm]emoryCaptures/
+
+# Asset meta files should be tracked!
+# But we can ignore meta files for temporary folders.
+/[Ll]ibrary/**/*.meta
+/[Tt]emp/**/*.meta
+/[Oo]bj/**/*.meta
+
+# Visual Studio / Rider specific files
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =================================================================
+# Node.js Projects (React & Docusaurus)
+# =================================================================
+# Dependencies
+/packages/clip-explorer-web/node_modules/
+/packages/docs/node_modules/
+
+# Docusaurus build artifacts
+/packages/docs/.docusaurus/
+/packages/docs/build/
+
+# React build artifacts
+/packages/clip-explorer-web/build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =================================================================
+# Operating System Files
+# =================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Firebase
+# Ignore the hidden firebase directory
+.firebase/
+
+# Ignore firebase hosting config and project aliases
+firebase.json
+.firebaserc
+
+# Ignore firebase debug logs
+firebase-debug.log*
+
+# Vite / React Build Output
+# Ignore the production build folder
+/packages/clip-explorer-web/dist/
