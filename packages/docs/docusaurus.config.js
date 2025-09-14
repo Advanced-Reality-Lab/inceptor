@@ -1,45 +1,14 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
-import {themes as prismThemes} from 'prism-react-renderer';
-
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: 'Inceptor Project',
-  tagline: 'Automated narrative 3D environments',
-  favicon: 'img/favicon.ico',
-
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
-  future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
-  },
-
-  // Set the production url of your site here
-  url: 'https://advanced-reality-lab.github.io/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/inceptor/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Advanced Reality Lab @ RUNI', // Usually your GitHub org/user name.
-  projectName: 'Inceptor', // Usually your repo name.
-
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
+module.exports = {
+  title: 'Inceptor Framework',
+  tagline: 'A framework for creating interactive, character-driven experiences.',
+  url: 'https://Advanced-Reality-Lab.github.io', // Your GitHub Pages URL
+  baseUrl: '/inceptor/',                     // The name of your repository
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+  favicon: 'img/favicon.ico',
+  organizationName: 'Advanced-Reality-Lab',     // Your GitHub username
+  projectName: 'inceptor',          // Your repository name
 
   presets: [
     [
@@ -47,29 +16,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/Advanced-Reality-Lab/inceptor/edit/main/packages/docs/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // We are disabling the blog for now.
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -78,24 +31,23 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Inceptor',
+        title: 'Inceptor Framework',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Inceptor Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'doc',
+            docId: 'introduction', // THIS IS THE FIX: Changed from 'intro' to 'introduction'
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // You can add a link to your Clip Explorer app here later
+          // {to: 'https://app.useinceptor.org', label: 'Clip Explorer', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Advanced-Reality-Lab/inceptor',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,36 +56,9 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Advanced-Reality-Lab/inceptor',
-              },
-            ],
-          },
+          // ... Footer links can be configured here ...
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Inceptor. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        copyright: `Copyright © ${new Date().getFullYear()} Your Name/Lab. Built with Docusaurus.`,
       },
     }),
 };
-
-export default config;
