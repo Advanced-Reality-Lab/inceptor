@@ -2,8 +2,8 @@
 module.exports = {
   title: 'Inceptor Framework',
   tagline: 'A framework for creating interactive, character-driven experiences.',
-  url: 'https://Advanced-Reality-Lab.github.io', // Your GitHub Pages URL
-  baseUrl: '/inceptor/',                     // The name of your repository
+  url: 'https://www.useinceptor.org', // Your GitHub Pages URL
+  baseUrl: '/',                     // The name of your repository
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
