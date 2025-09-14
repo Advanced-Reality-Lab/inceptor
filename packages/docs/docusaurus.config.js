@@ -17,10 +17,9 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl: 'https://github.com/Advanced-Reality-Lab/inceptor/edit/main/packages/docs/',
         },
-        blog: false, // We are disabling the blog for now.
+        blog: false, 
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -40,12 +39,11 @@ module.exports = {
         items: [
           {
             type: 'doc',
-            docId: 'introduction', // THIS IS THE FIX: Changed from 'intro' to 'introduction'
+            docId: 'introduction', 
             position: 'left',
             label: 'Documentation',
           },
-          // You can add a link to your Clip Explorer app here later
-          // {to: 'https://app.useinceptor.org', label: 'Clip Explorer', position: 'left'},
+
           {
             href: 'https://github.com/Advanced-Reality-Lab/inceptor',
             label: 'GitHub',
@@ -58,7 +56,7 @@ module.exports = {
         links: [
           // ... Footer links can be configured here ...
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Your Name/Lab. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Advanced Reality Lab @ RUNI. Built with Docusaurus.`,
       },
     }),
 };
